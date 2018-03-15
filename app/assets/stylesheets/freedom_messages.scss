@@ -1,0 +1,74 @@
+// Place all the styles related to the FreedomMessages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  text-align: center;
+  background-image: url("Freedom_Background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family:sans-serif;
+}
+
+nav{
+  //background-color: orange;
+  //background-image: url("navPaper.jpg");
+  //background-repeat: no-repeat;
+  //background-attachment: fixed;
+}
+
+h1{
+  font-weight: bold;
+}
+
+div#forMessageInput{
+  text-align: center;
+  width:50%;
+  margin: auto;
+}
+
+div#senderInputContainer{
+  margin: auto;
+  width: 30%;
+}
+
+input#senderInput{
+  text-align: center;
+  font-style: oblique;
+}
+
+
+textarea{
+  resize:none;
+  width: 50%;
+}
+
+div#forContainerMessageAndSearch{
+  margin: auto;
+  width:70%;
+  border: 5px solid pink;
+  background-color: white;
+}
+
+div#forContainerSearch{
+  text-align: right;
+}
+table{
+  width: 100%;
+  table-layout: fixed;
+}
+
+td#sender{
+  text-align: left;
+  word-wrap: break-word;
+  vertical-align:top;
+}
+
+td#message{
+  text-align: left;
+  word-wrap: break-word
+}
+
+th{
+  font-size: 20px;
+  text-align: center;
+}

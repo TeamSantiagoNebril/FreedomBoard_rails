@@ -1,0 +1,41 @@
+!!!
+%html
+  %head
+  %body{:class => 'container-fluid'}
+    %nav{:class => "navbar navbar-fixed-top navbar-collapse"}
+      %h1=@title
+    %br
+    %br
+    %br
+    %br
+    %br
+    %form{:action => 'cast', :method=> 'post'}
+      %div{:class => 'form-group', :id => 'forMessageInput'}
+        %textarea{:class=> 'form-control input-lg', :placeholder => 'Message', :name => 'message', :id => 'message', :rows => '6', :cols =>'30'}
+      %br
+      %div{:class => 'col-auto', :id => 'senderInputContainer'}
+        %input{:class=>'form-control', :type => "text", :name => "sender", :placeholder =>"Anonymous", :id=>'senderInput'}
+        %br
+        %button{:type => "submit", :class => "btn btn-primary btn-lg"}
+          %span{:class=>"glyphicon glyphicon-send", :aria-hidden=>"true"}
+          Post
+      %br
+    %form{:action => 'search', :method => 'post', :class =>'form-inline'}
+      %div{:class => "container-fluid rounded", :id => 'forContainerMessageAndSearch'}
+        %br
+        %div{:id => 'forContainerSearch'}
+          %input{:class=>'form-control', :type => "text", :name => "search", :placeholder => "Search..."}
+          %button{:type => "submit", :class => "btn btn-primary "}
+            %span{:class=>"glyphicon glyphicon-search", :aria-hidden=>"true"}
+            Search
+        %table
+          %tr
+            %br
+          %tr>
+          %tr
+            %td{:id => 'sender'}
+              %p
+            %td{:id => 'message'}
+              %p
+          %tr
+        %br
