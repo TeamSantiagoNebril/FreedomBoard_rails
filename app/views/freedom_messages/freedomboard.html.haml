@@ -2,14 +2,12 @@
 %html
   %head
   %body{:class => 'container-fluid'}
-    %nav{:class => "navbar navbar-fixed-top navbar-collapse"}
+    %nav{:class => "navbar navbar-collapse"}
       %h1=@title
-    %br
-    %br
-    %br
-    %br
-    %br
+    %div
+      %h2= flash['message']
     %form{:action => 'cast', :method=> 'post'}
+      = hidden_field_tag :authenticity_token, form_authenticity_token
       %div{:class => 'form-group', :id => 'forMessageInput'}
         %textarea{:class=> 'form-control input-lg', :placeholder => 'Message', :name => 'message', :id => 'message', :rows => '6', :cols =>'30'}
       %br
@@ -21,21 +19,22 @@
           Post
       %br
     %form{:action => 'search', :method => 'post', :class =>'form-inline'}
-      %div{:class => "container-fluid rounded", :id => 'forContainerMessageAndSearch'}
+      = hidden_field_tag :authenticity_token, form_authenticity_token
+      %div{:class => "container-fluid rounded well", :id => 'forContainerMessageAndSearch'}
         %br
         %div{:id => 'forContainerSearch'}
           %input{:class=>'form-control', :type => "text", :name => "search", :placeholder => "Search..."}
           %button{:type => "submit", :class => "btn btn-primary "}
             %span{:class=>"glyphicon glyphicon-search", :aria-hidden=>"true"}
             Search
-        %table
-          %tr
+        -@messages.each do |t|
+          -if @search_key == nil
+            -@search_key = ""
+          -if (t.message.include?(@search_key) || t.name.include?(@search_key))
             %br
-          %tr>
-          %tr
-            %td{:id => 'sender'}
-              %p
-            %td{:id => 'message'}
-              %p
-          %tr
-        %br
+            %div{:id => 'entry'}
+              %h4{:id => 'sender'}= t.name
+              %p{:id => 'dateTime'}= t.created_at
+              %p{:id => 'message'}= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".html_safe + t.message
+    %footer
+      %p &copy;All rights reserved 2018. Team Santiago Nebril

@@ -3,7 +3,13 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'freedom_messages#freedomboard'
+  root 'freedom_messages#freedomboard'
+  get '/freedomboard' => 'freedom_messages#freedomboard'
+  post '/cast' => 'freedom_messages#submitMessage'
+  post '/search' => 'freedom_messages#search'
+  get '/search' => 'freedom_messages#search'
+
+   #post '/search' => 'freedom_messages#search'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

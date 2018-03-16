@@ -9,13 +9,6 @@ body{
   font-family:sans-serif;
 }
 
-nav{
-  //background-color: orange;
-  //background-image: url("navPaper.jpg");
-  //background-repeat: no-repeat;
-  //background-attachment: fixed;
-}
-
 h1{
   font-weight: bold;
 }
@@ -45,30 +38,48 @@ textarea{
 div#forContainerMessageAndSearch{
   margin: auto;
   width:70%;
-  border: 5px solid pink;
-  background-color: white;
+  border: 7px solid coral;
+  background-color: orange;
 }
 
 div#forContainerSearch{
   text-align: right;
 }
-table{
-  width: 100%;
-  table-layout: fixed;
+
+footer{
+  padding-top: 60px;
+  font-weight: bold;
+  font-size: 1.5em;
 }
 
-td#sender{
+#entry{
+  margin: auto;
+  width: 80%;
+  min-height: 120px;
+  background-color: white;
+
+}
+
+#sender{
   text-align: left;
   word-wrap: break-word;
   vertical-align:top;
+  margin-left: 2%;
+  margin-right: 2%;
+  padding-top: 2%;
+  padding-bottom: 1px;
+  font-weight: bold;
 }
 
-td#message{
+#message{
   text-align: left;
-  word-wrap: break-word
+  margin-right: 2%;
+  margin-left: 2%;
+  word-wrap: break-word;
 }
 
-th{
-  font-size: 20px;
-  text-align: center;
+#dateTime{
+  text-align: right;
+  margin-right: 2%;
+  font-weight: bold;
 }
